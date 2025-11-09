@@ -1,0 +1,25 @@
+{
+  "name": "qa-ui-playwright",
+  "version": "1.0.0",
+  "description": "UI Test with playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marco0778/qa-ui-playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marco0778/qa-ui-playwright/issues"
+  },
+  "homepage": "https://github.com/marco0778/qa-ui-playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0"
+  }
+}
