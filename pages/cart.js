@@ -1,0 +1,3 @@
+exports.CartPage = class CartPage{
+    
+};
