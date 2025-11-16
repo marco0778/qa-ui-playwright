@@ -20,18 +20,14 @@ exports.CheckoutPage = class CheckoutPage{
         // console.log(showErrorMessage);
     }
 
-    async toConfirmtheCheckout(){
+    async getTotalAmount(){
         const b = await this.totalPrice.textContent();
         const number = b.match(/\d+(\.\d+)?/)[0];
-        const total = parseFloat(number);
-
-        if (total > 0) {
-            await this.buttonFinish.click();
-        }
-        else{
-            console.log("Assumed to be failed test");
-        }
+        return parseFloat(number);
     }
 
+    async finishCheckout(){
+        await this.buttonFinish.click();
+    }
 
 };

@@ -6,22 +6,22 @@ exports.CartPage = class CartPage {
         this.itemsRemove = cartClass.locator('button:has-text("Remove")');
         this.cartIcon = cartClass.locator('a.shopping_cart_link');//page.locator('a.shopping_cart_link')
         this.buttonCheckout = cartClass.locator('#checkout');
-        this.checkOutPage = cartClass.getByText('Checkout: Your Information');
+        this.webPageCheckout = cartClass.getByText('Checkout: Your Information');
     }
 
-    async addToCartbyIndex(index) {
+    async addToCart(index) {
         const name = await this.itemsName.nth(index).textContent();
         console.log(name);
         await this.items.first().click();
     }
 
-    async removeFromCartbyIndex(index) {
-        await this.itemsRemove.nth(index).click();
+    async removeFromCart(index) {
         const removedItemName = await this.itemsName.nth(index).textContent();
         console.log(removedItemName);
+        await this.itemsRemove.nth(index).click();
     }
 
-    async checkoutFromCart() { 
+    async checkoutFromCart() {
         await this.cartIcon.click();
         const getIteminCart = await this.itemsName.allTextContents();
         console.log(getIteminCart);
